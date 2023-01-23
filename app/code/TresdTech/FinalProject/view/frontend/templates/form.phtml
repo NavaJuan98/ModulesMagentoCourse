@@ -1,0 +1,54 @@
+<?php
+/**
+ * @var \TresdTech\FinalProject\Block\Form $block
+ */
+?>
+<h1 class="h1 text-center m-3">User Form</h1>
+<form 
+    class="container shadow mx-auto p-4 rounded w-75"
+    method="post"
+    action="<?php echo $this->getFormAction(); ?>"
+    data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
+    data-mage-init='{"validation":{}}'>
+    <div class="row">
+        <label for="first_name" class="form-label h4 fw-normal">
+            <?= $block->escapeHtmlAttr(__('Name')) ?>
+        </label>
+        <div class="mb-3 w-50">
+            <input type="text" class="form-control fw-light" id="first_name" name="first_name"
+            placeholder="<?= $block->escapeHtmlAttr(__('First Name')) ?>"
+            data-validate="{required:true, 'validate-alpha':true}">
+        </div>
+        <div class="mb-3 w-50 ">
+            <input type="text" class="form-control fw-light" id="last_name" name="last_name"
+            placeholder="<?= $block->escapeHtmlAttr(__('Last Name')) ?>"
+            data-validate="{required:true, 'validate-alpha':true}">
+        </div>
+    </div> 
+    <div class="row">
+        <div class="mb-3 w-75">
+            <label for="email" class="form-label h4 fw-normal">
+                <?= $block->escapeHtmlAttr(__('Email')) ?>
+            </label>
+            <input type="email" class="form-control fw-light" id="email" name="email" 
+            placeholder="<?= $block->escapeHtmlAttr(__('email@example.com')) ?>"
+            data-validate="{required:true, 'validate-email':true}">
+        </div>
+        <div class="mb-3 w-25">
+            <label for="telephone" class="form-label h4 fw-normal">
+                <?= $block->escapeHtmlAttr(__('Telephone')) ?>
+            </label>
+            <input type="tel" class="form-control fw-light" id="telephone" name="telephone" maxlength="10" minlength="10"
+            placeholder="<?= $block->escapeHtmlAttr(__('(+52) ----------')) ?>"
+            data-validate="{required:true, 'validate-number':true}">
+        </div>
+    </div>
+   
+      
+    <div class=" mx-auto text-center p-2">
+        <button type="submit" class="btn btn-lg btn-outline-primary">
+            <?= $block->escapeHtmlAttr(__('Registrar')) ?>
+        </button>
+    </div>
+</form>
+

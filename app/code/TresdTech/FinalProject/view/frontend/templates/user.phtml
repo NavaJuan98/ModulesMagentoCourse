@@ -1,0 +1,33 @@
+<?php
+/**
+ * @var \TresdTech\FinalProject\Block\User $block
+ */
+?>
+
+<?php if($block->getCount() > 0): ?>
+<h1 class="h1 m-2">Users</h1>
+<table class="table table-striped shadow p-2">
+  <thead class="bg-secondary text-white">
+    <th class="h2 user-id">Id</th>
+    <th class="h2 user-name">Name</th>
+    <th class="h2 user-type">Type Employee</th>
+    <th class="h2 user-description">Description</th>
+    <th class="h2 tags">Tags</th>
+  </thead>
+  <tbody>
+    <?php
+        foreach ($block->getUserCollection() as $key=>$user){
+            echo '<tr>
+                    <td class="h4">'.$user->getId().'</td>
+                    <td class="h4">'.$user->getFirstName().'</td>
+                    <td class="h4">'.$user->getLastName().'</td>
+                    <td class="h4">'.$user->getEmail().'</td>
+                    <td class="h4">'.$user->getTelephone().'</td>
+                  </tr>';
+        }
+    ?>
+  </tbody>
+</table>
+<?php else: ?>
+    <h1 class="h1 m2">No hay registros</h1>
+<?php endif;?>
